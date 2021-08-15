@@ -1,0 +1,29 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Fox {
+  id: ID!
+  name: String!
+  age: Int!
+}
+
+type Query {
+  foxes: [Fox!]!
+}
+
+type Mutation {
+  createFox(input: CreateFoxInput!): Fox!
+}
+
+input CreateFoxInput {
+  """이름"""
+  name: String!
+
+  """나이"""
+  age: Int!
+}
+
+type Subscription {
+  said: String!
+}

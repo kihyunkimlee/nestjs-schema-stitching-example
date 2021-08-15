@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Cat {
+  id: ID!
+  name: String!
+  age: Int!
+}
+
+type Query {
+  cats: [Cat!]!
+}
+
+type Mutation {
+  createCat(input: CreateCatInput!): Cat!
+}
+
+input CreateCatInput {
+  """이름"""
+  name: String!
+
+  """나이"""
+  age: Int!
+}
+
+type Subscription {
+  createdCat: Cat!
+  cried: String!
+}

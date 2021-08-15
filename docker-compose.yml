@@ -1,0 +1,22 @@
+version: '3'
+services:
+  gateway:
+    build: ./gateway
+    ports:
+      - '3000:3000'
+    volumes:
+      - './gateway/src:/home/app/src'
+  sub1:
+    build: sub1
+    ports:
+      - '3001:3001'
+    volumes:
+      - './sub1/src:/home/app/src'
+  sub2:
+    build: sub2
+    ports:
+      - '3002:3002'
+    expose:
+      - '8002'
+    volumes:
+      - './sub2/src:/home/app/src'
