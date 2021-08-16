@@ -3,16 +3,33 @@
 # ------------------------------------------------------
 
 type Fox {
+  """아이디"""
   id: ID!
+
+  """이름"""
   name: String!
+
+  """나이"""
   age: Int!
 }
 
 type Query {
+  """
+  
+        (gateway's query)
+        모든 여우 정보를 조회합니다.
+      
+  """
   foxes: [Fox!]!
 }
 
 type Mutation {
+  """
+  
+        (gateway's mutation)
+        여우 정보를 등록합니다.
+      
+  """
   createFox(input: CreateFoxInput!): Fox!
 }
 
@@ -25,5 +42,21 @@ input CreateFoxInput {
 }
 
 type Subscription {
-  said: String!
+  """
+  
+        (gateway's subscription)
+        여우 정보 등록 이벤트를 구독합니다.
+        여우 정보가 등록될 때마다 등록된 여우 정보를 받게 됩니다.
+      
+  """
+  createdFox: Fox!
+
+  """
+  
+        (gateway's subscription)
+        여우 울음 이벤트를 구독합니다.
+        5초 마다 여우가 웁니다.
+      
+  """
+  foxCried: String!
 }

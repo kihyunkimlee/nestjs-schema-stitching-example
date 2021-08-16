@@ -14,20 +14,29 @@ export class DogResolver {
   ) {}
 
   /**
-   * 모든 강아지를 조회합니다.
+   * 모든 강아지 정보를 조회합니다.
    */
   @Query(() => [DogEntity], {
     name: 'dogs',
+    description: `
+      (sub1's query)
+      모든 강아지 정보를 조회합니다.
+    `,
   })
   findAll(): DogEntity[] {
     return this.dogService.findAll();
   }
 
   /**
-   * 강아지를 등록합니다.
+   * 강아지 정보를 등록합니다.
    * @param input
    */
-  @Mutation(() => DogEntity)
+  @Mutation(() => DogEntity, {
+    description: `
+      (sub1's mutation)
+      강아지 정보를 등록합니다.
+    `,
+  })
   createDog(@Args('input') input: CreateDogInput): DogEntity {
     return this.dogService.createDog(input);
   }

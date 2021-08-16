@@ -9,10 +9,22 @@ type Dog {
 }
 
 type Query {
+  """
+  
+        (sub1's query)
+        모든 강아지 정보를 조회합니다.
+      
+  """
   dogs: [Dog!]!
 }
 
 type Mutation {
+  """
+  
+        (sub1's mutation)
+        강아지 정보를 등록합니다.
+      
+  """
   createDog(input: CreateDogInput!): Dog!
 }
 

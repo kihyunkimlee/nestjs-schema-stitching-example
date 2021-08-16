@@ -6,6 +6,13 @@ services:
       - '3000:3000'
     volumes:
       - './gateway/src:/home/app/src'
+      - './gateway/libs:/home/app/libs'
+    links:
+      - sub1
+      - sub2
+    depends_on:
+      - sub1
+      - sub2
   sub1:
     build: sub1
     ports:

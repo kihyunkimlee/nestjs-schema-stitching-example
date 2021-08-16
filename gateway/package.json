@@ -8,7 +8,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -21,16 +21,24 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@apollo/client": "^3.4.7",
+    "@graphql-tools/stitch": "^8.1.0",
+    "@graphql-tools/utils": "^8.1.0",
+    "@graphql-tools/wrap": "^8.0.10",
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/graphql": "^8.0.2",
     "@nestjs/platform-express": "^8.0.0",
     "apollo-server-express": "^2.25.2",
+    "cross-fetch": "^3.1.4",
     "graphql": "^15.5.1",
     "graphql-subscriptions": "^1.2.1",
+    "graphql-tools": "^8.1.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "subscriptions-transport-ws": "^0.9.19",
+    "ws": "^8.1.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",

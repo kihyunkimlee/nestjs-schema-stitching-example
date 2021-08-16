@@ -1,13 +1,14 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
-import { join } from 'path';
+import { SchemaStitchingModule } from '@lib/schema-stitching';
+import { GraphqlOptions } from './graphql.options';
 
 @Module({
   imports: [
-    GraphQLModule.forRoot({
-      cors: true,
-      autoSchemaFile: join(process.cwd(), 'src/autogen/schema.gql'),
-      installSubscriptionHandlers: true,
+    GraphQLModule.forRootAsync({
+      imports: [SchemaStitchingModule],
+      useClass: GraphqlOptions,
+      inject: [SchemaStitchingModule],
     }),
   ],
 })

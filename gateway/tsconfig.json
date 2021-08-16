@@ -11,6 +11,9 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
+    "paths": {
+      "@lib/schema-stitching": ["libs/schema-stitching/src"]
+    },
     "skipLibCheck": true
   }
 }

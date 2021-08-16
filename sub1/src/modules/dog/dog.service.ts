@@ -6,15 +6,16 @@ import { PUB_SUB } from './dog.const';
 
 @Injectable()
 export class DogService {
+  // 프로젝트를 간단하게 만들기 위해서 배열에 강아지 정보를 저장합니다.
   private dogs: DogEntity[] = [
     {
       id: 1,
-      name: '바둑이',
+      name: '백구',
       age: 3,
     },
     {
       id: 2,
-      name: '백구',
+      name: '누렁이',
       age: 4,
     },
   ];
@@ -31,6 +32,7 @@ export class DogService {
       ...input,
     };
 
+    // 새로운 강아지 정보를 배열에 추가합니다.
     this.dogs.push(dog);
 
     return dog;
